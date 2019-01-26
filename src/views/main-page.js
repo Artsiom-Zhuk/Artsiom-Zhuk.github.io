@@ -1,9 +1,12 @@
 import React from 'react';
 
-const MainPage = () => (
+const MainPage = ({ person: { name, titlePhoto, birthDate }, goToPersonPage }) => (
   <div>
     <h2>Главная страница</h2>
-    <p>Главная страница</p>
+    <p>Фотограф дня</p>
+    <p onClick={goToPersonPage}>{name}</p>
+    <img src={`/assets/${titlePhoto}`} alt="" />
+    <p>{birthDate}</p>
   </div>
 );
 

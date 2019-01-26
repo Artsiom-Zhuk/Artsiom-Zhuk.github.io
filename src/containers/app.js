@@ -31,8 +31,12 @@ class App extends Component {
 
   render() {
     const { pageToShow, persons, personIndex } = this.state;
+    const randomIndex = Math.floor(Math.random() * persons.length);
     const app = {
-      mainPage: <MainPage />,
+      mainPage: <MainPage 
+        person={persons[randomIndex]} 
+        goToPersonPage={() => this.goToPersonPage(randomIndex)} 
+      />,
       personList: <PersonList persons={persons} goToPersonPage={this.goToPersonPage} />,
       personItem: <PersonItem person={persons[personIndex]} />,
     };
