@@ -83,6 +83,37 @@ const artistList = [
     video: 'https://www.youtube.com/watch?v=3QP-ZW5_DfM',
     workLocation: 'Витебск',
   },
+  {
+    id: 'shmerling',
+    name: 'Шмерлинг Михаил',
+    titlePhoto: 'shmerling_title.jpg',
+    birthPlace: 'Витебск, БССР',
+    birthDate: '07.12.1946',
+    lifePeriod: '1946 - наши дни',
+    bio: [
+      {
+        period: '1967',
+        activity: 'Окончивает Минское полиграфическое училище.',
+      },
+      {
+        period: '1969–1983',
+        activity: 'Работает в Витебском областном краеведческом музее.',
+      },
+      {
+        period: '1986–1991',
+        activity: 'Работает в производственном объединении «Мастацтва».',
+      },
+      {
+        period: '1991–2007',
+        activity: 'Работает в редакции областной газеты «Народнае слова».',
+      },
+
+    ],
+    works: ['«Браславский мотив» (1982)', '«Художник Ф. Гумен» (1985)', '«Народная артистка СССР С. Станюта» (1990)', '«Вечер» (1991)', '«Летучка» (2000)', '«Афганцы» (2005)', '«Художники» (2010)'],
+    photos: ['shmerling_1.jpg', 'shmerling_2.jpg', 'shmerling_3.jpg', 'shmerling_4.jpg', 'shmerling_5.jpg'],
+    video: 'https://www.youtube.com/watch?v=Rh5e-qcdmdQ',
+    workLocation: 'Витебск',
+  },
 ];
 
 export default artistList;
