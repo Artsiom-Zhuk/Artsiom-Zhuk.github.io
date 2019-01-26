@@ -7,7 +7,18 @@ import PersonItem from '../views/person-item';
 
 class App extends Component {
   state = {
-    pageToShow: 'mainPage'
+    pageToShow: 'mainPage',
+    persons: [
+      {
+        name: 'Ivan',
+        age: 40,
+      },
+      {
+        name: 'Petr',
+        age: 50,
+      },
+    ],
+    personId: null,
   }
 
   goToMain = () => {
@@ -18,13 +29,20 @@ class App extends Component {
     this.setState({ pageToShow: 'personList' });
   }
 
+  goToPersonPage = (personId) => {
+    this.setState({ 
+      pageToShow: 'personItem',
+      personId,
+    });
+  }
+
   render() {
+    const { pageToShow, persons, personId } = this.state;
     const app = {
       mainPage: <MainPage />,
-      personList: <PersonList />,
-      personItem: <PersonItem />,
+      personList: <PersonList persons={persons} goToPersonPage={this.goToPersonPage} />,
+      personItem: <PersonItem person={persons[personId]} />,
     };
-    const { pageToShow } = this.state;
     
     return (
       <div className="App">
