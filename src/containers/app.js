@@ -5,9 +5,13 @@ import MainPage from '../views/main-page';
 import PersonList from '../views/person-list';
 import PersonItem from '../views/person-item';
 
+import persons from '../data/data';
+
 class App extends Component {
   state = {
-    pageToShow: 'mainPage'
+    pageToShow: 'mainPage',
+    persons,
+    personIndex: null,
   }
 
   goToMain = () => {
@@ -18,13 +22,20 @@ class App extends Component {
     this.setState({ pageToShow: 'personList' });
   }
 
+  goToPersonPage = (personIndex) => {
+    this.setState({ 
+      pageToShow: 'personItem',
+      personIndex,
+    });
+  }
+
   render() {
+    const { pageToShow, persons, personIndex } = this.state;
     const app = {
       mainPage: <MainPage />,
-      personList: <PersonList />,
-      personItem: <PersonItem />,
+      personList: <PersonList persons={persons} goToPersonPage={this.goToPersonPage} />,
+      personItem: <PersonItem person={persons[personIndex]} />,
     };
-    const { pageToShow } = this.state;
     
     return (
       <div className="App">
