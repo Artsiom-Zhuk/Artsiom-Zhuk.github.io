@@ -1,11 +1,12 @@
 import React from 'react';
 
-const PersonItem = ({ person: { name, age } }) => (
+const PersonItem = ({ person: { name, titlePhoto, birthDate } }) => (
   <div>
     <h2>Страница деятеля</h2>
     <p>Страница деятеля культуры</p>
     <p>{name}</p>
-    <p>{age}</p>
+    <img src={`/assets/${titlePhoto}`} alt="" />
+    <p>{birthDate}</p>
   </div>
 );
 

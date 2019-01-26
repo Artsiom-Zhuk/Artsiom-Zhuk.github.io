@@ -1,10 +1,10 @@
 import React from 'react';
 
 const PersonList = ({ persons, goToPersonPage }) => {
-  const personList = persons.map(({ name, age }, index) => (
-    <div key={name+age+index}>
+  const personList = persons.map(({ name, birthDate, id }, index) => (
+    <div key={id}>
       <p onClick={()=>goToPersonPage(index)}>{name}</p>
-      <p>{age}</p>
+      <p>{birthDate}</p>
     </div>
   ));
   return (
