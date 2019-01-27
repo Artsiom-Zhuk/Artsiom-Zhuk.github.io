@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { translate } from 'react-i18next';
 
 class PersonList extends Component {
   state = {
@@ -14,19 +15,22 @@ class PersonList extends Component {
   }
 
   render() {
+    const { t } = this.props;
     const { goToPersonPage } = this.props;
     const { value, filteredPersons } = this.state;
     const personList = filteredPersons.map(({ id, name, birthPlace, birthDate,  }, index) => (
       <div key={id}>
-        <p onClick={()=>goToPersonPage(index)}>{name}</p>
-        <p>{birthPlace}</p>
+        <p onClick={()=>goToPersonPage(index)}>{t(name)}</p>
+        <p>{t(birthPlace)}</p>
         <p>{birthDate}</p>
       </div>
     ));
+    
+
     return (
       <div>
-        <h2>Список фотографов</h2>
-        <p>Страница со списком деятелей культуры по заданной теме с поиском</p>
+        <h2>{t('Список фотографов')}</h2>
+        <p>{t('Поиск')}</p>
         <input onChange={this.handleInputChange} value={value} />
         {personList}
       </div>
@@ -34,4 +38,4 @@ class PersonList extends Component {
   }
 }
 
-export default PersonList;
+export default translate('translations')(PersonList);
