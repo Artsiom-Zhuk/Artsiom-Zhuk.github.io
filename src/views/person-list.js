@@ -9,8 +9,8 @@ class PersonList extends Component {
 
   handleInputChange = (e) => {
     const { value } = e.target;
-    const { persons } = this.props;
-    const filteredPersons = persons.filter(({ name, birthPlace }) => (name + birthPlace).toLowerCase().includes(value.toLowerCase()));
+    const { t, persons } = this.props;
+    const filteredPersons = persons.filter(({ name, birthPlace }) => (t(name) + t(birthPlace)).toLowerCase().includes(value.toLowerCase()));
     this.setState({ value, filteredPersons });
   }
 
