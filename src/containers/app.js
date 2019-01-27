@@ -1,49 +1,58 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Navigation from '../views/navigation';
-import MainPage from '../views/main-page';
-import PersonList from '../views/person-list';
-import PersonItem from '../views/person-item';
+import "../css/style.css";
 
-import persons from '../data/data';
+import Navigation from "../views/navigation";
+import MainPage from "../views/main-page";
+import PersonList from "../views/person-list";
+import PersonItem from "../views/person-item";
+
+import persons from "../data/data";
 
 class App extends Component {
   state = {
-    pageToShow: 'mainPage',
+    pageToShow: "mainPage",
     persons,
-    personIndex: null,
-  }
+    personIndex: null
+  };
 
   goToMain = () => {
-    this.setState({ pageToShow: 'mainPage' });
-  }
+    this.setState({ pageToShow: "mainPage" });
+  };
 
   goToPersonList = () => {
-    this.setState({ pageToShow: 'personList' });
-  }
+    this.setState({ pageToShow: "personList" });
+  };
 
-  goToPersonPage = (personIndex) => {
-    this.setState({ 
-      pageToShow: 'personItem',
-      personIndex,
+  goToPersonPage = personIndex => {
+    this.setState({
+      pageToShow: "personItem",
+      personIndex
     });
-  }
+  };
 
   render() {
     const { pageToShow, persons, personIndex } = this.state;
     const randomIndex = Math.floor(Math.random() * persons.length);
     const app = {
-      mainPage: <MainPage 
-        person={persons[randomIndex]} 
-        goToPersonPage={() => this.goToPersonPage(randomIndex)} 
-      />,
-      personList: <PersonList persons={persons} goToPersonPage={this.goToPersonPage} />,
-      personItem: <PersonItem person={persons[personIndex]} />,
+      mainPage: (
+        <MainPage
+          person={persons[randomIndex]}
+          goToPersonPage={() => this.goToPersonPage(randomIndex)}
+        />
+      ),
+      personList: (
+        <PersonList persons={persons} goToPersonPage={this.goToPersonPage} />
+      ),
+      personItem: <PersonItem person={persons[personIndex]} />
     };
-    
+
     return (
       <div className="App">
-        <Navigation goToMain={this.goToMain} goToPersonList={this.goToPersonList} />
+        <Navigation
+          goToMain={this.goToMain}
+          goToPersonList={this.goToPersonList}
+        />
         {app[pageToShow]}
       </div>
     );

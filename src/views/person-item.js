@@ -13,12 +13,6 @@ class PersonItem extends Component {
     let personContent;
     personContent = (
       <div>
-        <div className="row">
-          <div className="col-md-6">
-            <p>Back to person list</p>
-          </div>
-          <div className="col-md-6" />
-        </div>
         <h2>Страница деятеля</h2>
         <p>Страница деятеля культуры</p>
         <p>{person.name}</p>
