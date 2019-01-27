@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
+import '../style/list.css';
 
 class PersonList extends Component {
   state = {
@@ -19,8 +20,8 @@ class PersonList extends Component {
     const { goToPersonPage } = this.props;
     const { value, filteredPersons } = this.state;
     const personList = filteredPersons.map(({ id, name, birthPlace, birthDate,  }, index) => (
-      <div key={id}>
-        <p onClick={()=>goToPersonPage(index)}>{t(name)}</p>
+      <div key={id} className='person-list-item' onClick={()=>goToPersonPage(index)}>
+        <p>{t(name)}</p>
         <p>{t(birthPlace)}</p>
         <p>{birthDate}</p>
       </div>
@@ -28,11 +29,15 @@ class PersonList extends Component {
     
 
     return (
-      <div>
-        <h2>{t('Список фотографов')}</h2>
-        <p>{t('Поиск')}</p>
-        <input onChange={this.handleInputChange} value={value} />
-        {personList}
+      <div className='list-page'>
+        <h2 className='person-list-title'>{t('Список фотографов')}</h2>
+        <div className='person-seacrh-container'>
+          <p className='presearch'>{t('Поиск')}:</p>
+          <input onChange={this.handleInputChange} value={value} placeholder={t('Введите имя или город')}/>
+        </div>
+        <div className='person-list-container'>
+          {personList}
+        </div>
       </div>
     );
   }

@@ -1,0 +1,60 @@
+.list-page {
+  margin-top: 5px;
+}
+
+.person-list-title {
+  text-align: center;
+  font-size: 2em;
+  margin: 5px;
+}
+
+.person-seacrh-container {
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.presearch {
+  font-weight: 700;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+input {
+  width: 200px;
+}
+
+.person-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+
+.person-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 200px;
+  min-width: 200px;
+  max-height: 200px;
+  min-height: 140px;
+  background: silver;
+  border: yellowgreen solid;
+  border-radius: 15px;
+  margin: 10px 5px;
+  cursor: pointer;
+}
+.person-list-item:hover {
+  font-weight: 700;
+  border: red solid;
+}
+
+.person-list-item > p {
+  margin: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+.person-list-item p:first-of-type {
+  text-transform: uppercase;
+}

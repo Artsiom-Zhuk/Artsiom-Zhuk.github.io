@@ -7,6 +7,7 @@ import PersonList from '../views/person-list';
 import PersonItem from '../views/person-item';
 import persons from '../data/data';
 import { translate } from 'react-i18next';
+import '../style/locControl.css';
 
 class App extends Component {
   state = {
