@@ -9,15 +9,28 @@ class PersonItem extends Component {
   }
   render() {
     const { person } = this.props;
-
     let personContent;
     personContent = (
       <div>
         <h2>Страница деятеля</h2>
         <p>Страница деятеля культуры</p>
         <p>{person.name}</p>
-        <img src={`/assets/${person.titlePhoto}`} alt="" />
         <p>{person.birthDate}</p>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card card-body bg-info text-white mb-3">
+              <div className="row">
+                <div className="col-4 col-md-3 m-auto">
+                  <img
+                    className="rounded-circle"
+                    src={`../assets/${person.titlePhoto}`}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
     return (
