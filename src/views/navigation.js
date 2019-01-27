@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Navigation = ({ goToMain, goToPersonList }) => (
+const Navigation = ({ goToMain, goToPersonList, t }) => (
   <nav>
-    <li onClick={goToMain}>Main</li>
-    <li onClick={goToPersonList}>Person List</li>
+    <li onClick={goToMain}>{ t('Main') }</li>
+    <li onClick={goToPersonList}>{ t('Person List') }</li>
   </nav>
 );
 

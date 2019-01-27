@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-
 import Navigation from '../views/navigation';
 import MainPage from '../views/main-page';
 import PersonList from '../views/person-list';
 import PersonItem from '../views/person-item';
-
 import persons from '../data/data';
+import { translate } from 'react-i18next';
 
 class App extends Component {
   state = {
@@ -40,14 +39,24 @@ class App extends Component {
       personList: <PersonList persons={persons} goToPersonPage={this.goToPersonPage} />,
       personItem: <PersonItem person={persons[personIndex]} />,
     };
-    
+
+    const { t, i18n } = this.props;
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    };
+
     return (
       <div className="App">
-        <Navigation goToMain={this.goToMain} goToPersonList={this.goToPersonList} />
+        <div className='loc-control'>
+          <button type="button" onClick={() => changeLanguage('ru')}>ru</button>
+          <button type="button" onClick={() => changeLanguage('en')}>en</button>
+          <button type="button" onClick={() => changeLanguage('by')}>by</button>
+        </div>
+        <Navigation goToMain={this.goToMain} goToPersonList={this.goToPersonList} t={t} />
         {app[pageToShow]}
       </div>
     );
   }
 }
 
-export default App;
+export default translate('translations')(App);
