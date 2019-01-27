@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
 
 class PersonItem extends Component {
   componentDidMount() {}
@@ -28,6 +29,24 @@ class PersonItem extends Component {
                   />
                 </div>
               </div>
+              <div className="text-center">
+                <h1 className="display-4 text-center">{person.name}</h1>
+              </div>
+            </div>
+            <div className="card card-body bg-light mb-3">
+              <Timeline lineColor={"#ddd"}>
+                {person.bio.map((item, i) => {
+                  return (
+                    <TimelineItem
+                      key={i}
+                      dateText={item.period}
+                      style={{ color: "#e86971" }}
+                    >
+                      <p>{item.activity}</p>
+                    </TimelineItem>
+                  );
+                })}
+              </Timeline>
             </div>
           </div>
         </div>
