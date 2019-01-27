@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Navigation from '../views/navigation';
 import MainPage from '../views/main-page';
 import PersonList from '../views/person-list';
@@ -23,7 +25,7 @@ class App extends Component {
   }
 
   goToPersonPage = (personIndex) => {
-    this.setState({ 
+    this.setState({
       pageToShow: 'personItem',
       personIndex,
     });
@@ -33,9 +35,9 @@ class App extends Component {
     const { pageToShow, persons, personIndex } = this.state;
     const randomIndex = Math.floor(Math.random() * persons.length);
     const app = {
-      mainPage: <MainPage 
-        person={persons[randomIndex]} 
-        goToPersonPage={() => this.goToPersonPage(randomIndex)} 
+      mainPage: <MainPage
+        person={persons[randomIndex]}
+        goToPersonPage={() => this.goToPersonPage(randomIndex)}
       />,
       personList: <PersonList persons={persons} goToPersonPage={this.goToPersonPage} />,
       personItem: <PersonItem person={persons[personIndex]} />,
