@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
 import YouTube from "react-youtube";
-
 import MyFancyComponent from "../component/Map";
+import { translate } from "react-i18next";
 
 class PersonItem extends Component {
   componentDidMount() {}
@@ -12,7 +12,7 @@ class PersonItem extends Component {
     }
   }
   render() {
-    const { person } = this.props;
+    const { person: { name, titlePhoto, bio, works, photos, video }, t } = this.props;
     const opts = {
       height: "390",
       width: "640",
@@ -24,10 +24,6 @@ class PersonItem extends Component {
     let personContent;
     personContent = (
       <div>
-        <h2>Страница деятеля</h2>
-        <p>Страница деятеля культуры</p>
-        <p>{person.name}</p>
-        <p>{person.birthDate}</p>
         <div className="row">
           <div className="col-md-12">
             <div className="card card-body bg-info text-white mb-3">
@@ -35,50 +31,50 @@ class PersonItem extends Component {
                 <div className="col-4 col-md-3 m-auto">
                   <img
                     className="rounded-circle"
-                    src={require(`../assets/${person.titlePhoto}`)}
+                    src={require(`../assets/${titlePhoto}`)}
                     alt=""
                   />
                 </div>
               </div>
               <div className="text-center">
-                <h1 className="display-4 text-center">{person.name}</h1>
+                <h1 className="display-4 text-center">{t(name)}</h1>
               </div>
             </div>
             <div className="card card-body bg-light mb-3">
-              <h3 className="text-center text-info">Биография</h3>
+              <h3 className="text-center text-info">{t('Биография')}</h3>
               <Timeline lineColor={"#ddd"}>
-                {person.bio.map((item, i) => {
+                {bio.map(({ period, activity }, i) => {
                   return (
                     <TimelineItem
                       key={i}
-                      dateText={item.period}
+                      dateText={period}
                       style={{ color: "#e86971" }}
                     >
-                      <p>{item.activity}</p>
+                      <p>{t(activity)}</p>
                     </TimelineItem>
                   );
                 })}
               </Timeline>
               <hr />
-              <h3 className="text-center text-info">Список произведений</h3>
+              <h3 className="text-center text-info">{t('Список основных работ')}</h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
-                  {person.works.map((work, index) => (
+                  {works.map((work, index) => (
                     <div
                       key={index}
                       className="col-12 col-md-12 m-auto text-center"
                     >
                       <i className="fa fa-check pr-1" />
-                      {work}
+                      {t(work)}
                     </div>
                   ))}
                 </div>
               </div>
               <hr />
-              <h3 className="text-center text-info">Галерея</h3>
+              <h3 className="text-center text-info">{t('Галерея')}</h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
-                  {person.photos.map((photo, index) => (
+                  {photos.map((photo, index) => (
                     <div
                       key={index}
                       className="col-4 col-md-4 m-auto text-center"
@@ -93,11 +89,11 @@ class PersonItem extends Component {
                 </div>
               </div>
               <hr />
-              <h3 className="text-center text-info">Видео</h3>
+              <h3 className="text-center text-info">{t('Видео')}</h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   <YouTube
-                    videoId={person.video}
+                    videoId={video}
                     opts={opts}
                     onReady={this._onReady}
                   />
@@ -127,4 +123,4 @@ class PersonItem extends Component {
   }
 }
 
-export default PersonItem;
+export default translate("translations")(PersonItem);
