@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import { translate } from 'react-i18next';
+import React, { Component } from "react";
+import { translate } from "react-i18next";
 import '../style/list.css';
 
 class PersonList extends Component {
   state = {
-    value: '',
-    filteredPersons: this.props.persons,
-  }
+    value: "",
+    filteredPersons: this.props.persons
+  };
 
-  handleInputChange = (e) => {
+  handleInputChange = e => {
     const { value } = e.target;
     const { t, persons } = this.props;
-    const filteredPersons = persons.filter(({ name, birthPlace }) => (t(name) + t(birthPlace)).toLowerCase().includes(value.toLowerCase()));
+    const filteredPersons = persons.filter(({ name, birthPlace }) =>
+      (t(name) + t(birthPlace)).toLowerCase().includes(value.toLowerCase())
+    );
     this.setState({ value, filteredPersons });
-  }
+  };
 
   render() {
     const { t } = this.props;
@@ -43,4 +45,4 @@ class PersonList extends Component {
   }
 }
 
-export default translate('translations')(PersonList);
+export default translate("translations")(PersonList);
