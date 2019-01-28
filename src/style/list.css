@@ -1,11 +1,19 @@
 .list-page {
-  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 48px);
+  padding-top: 10px;
+  background-image: url(/static/media/main-page-background.5d1a2dd4.jpg);
+  background-size: cover;
+  margin-bottom: 0;
 }
 
 .person-list-title {
   text-align: center;
   font-size: 2em;
   margin: 5px;
+  color: whitesmoke;
 }
 
 .person-seacrh-container {
@@ -15,9 +23,11 @@
 }
 
 .presearch {
+  width:60px;
   font-weight: 700;
   margin-right: 5px;
-  font-size: 18px;
+  margin-bottom: 0;
+  color: whitesmoke;
 }
 
 input {
@@ -28,6 +38,10 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content:space-evenly;
+  background: rgba(204, 204, 204, 0.9);
+  max-width: 70%;
+  border-radius: 20px;
+  margin: 50px auto;
 }
 
 .person-list-item {
@@ -37,8 +51,7 @@ input {
   align-items: center;
   max-width: 200px;
   min-width: 200px;
-  max-height: 200px;
-  min-height: 140px;
+  height: 160px;
   background: silver;
   border: yellowgreen solid;
   border-radius: 15px;
