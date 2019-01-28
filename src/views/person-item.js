@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
 import YouTube from "react-youtube";
 
+import MyFancyComponent from "../component/Map";
+
 class PersonItem extends Component {
   componentDidMount() {}
   componentWillReceiveProps(nextProps) {
@@ -18,6 +20,7 @@ class PersonItem extends Component {
         autoplay: 1
       }
     };
+
     let personContent;
     personContent = (
       <div>
@@ -57,8 +60,8 @@ class PersonItem extends Component {
                 })}
               </Timeline>
               <hr />
-              <h3 class="text-center text-info">Список произведений</h3>
-              <div class="d-flex flex-wrap justify-content-center align-items-center">
+              <h3 className="text-center text-info">Список произведений</h3>
+              <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   {person.works.map((work, index) => (
                     <div
@@ -72,8 +75,8 @@ class PersonItem extends Component {
                 </div>
               </div>
               <hr />
-              <h3 class="text-center text-info">Галерея</h3>
-              <div class="d-flex flex-wrap justify-content-center align-items-center">
+              <h3 className="text-center text-info">Галерея</h3>
+              <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   {person.photos.map((photo, index) => (
                     <div
@@ -86,8 +89,8 @@ class PersonItem extends Component {
                 </div>
               </div>
               <hr />
-              <h3 class="text-center text-info">Видео</h3>
-              <div class="d-flex flex-wrap justify-content-center align-items-center">
+              <h3 className="text-center text-info">Видео</h3>
+              <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   <YouTube
                     videoId={person.video}
@@ -95,6 +98,10 @@ class PersonItem extends Component {
                     onReady={this._onReady}
                   />
                 </div>
+              </div>
+              <hr />
+              <div id="mapid">
+                <MyFancyComponent />
               </div>
             </div>
           </div>
