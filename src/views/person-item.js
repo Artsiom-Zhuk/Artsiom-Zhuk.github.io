@@ -12,7 +12,7 @@ class PersonItem extends Component {
     }
   }
   render() {
-    const { person } = this.props;
+    const { person: { name, birthDate, titlePhoto, bio, works, photos, video } } = this.props;
     const opts = {
       height: "390",
       width: "640",
@@ -26,8 +26,8 @@ class PersonItem extends Component {
       <div>
         <h2>Страница деятеля</h2>
         <p>Страница деятеля культуры</p>
-        <p>{person.name}</p>
-        <p>{person.birthDate}</p>
+        <p>{name}</p>
+        <p>{birthDate}</p>
         <div className="row">
           <div className="col-md-12">
             <div className="card card-body bg-info text-white mb-3">
@@ -35,19 +35,19 @@ class PersonItem extends Component {
                 <div className="col-4 col-md-3 m-auto">
                   <img
                     className="rounded-circle"
-                    src={`../assets/${person.titlePhoto}`}
+                    src={`../assets/${titlePhoto}`}
                     alt=""
                   />
                 </div>
               </div>
               <div className="text-center">
-                <h1 className="display-4 text-center">{person.name}</h1>
+                <h1 className="display-4 text-center">{name}</h1>
               </div>
             </div>
             <div className="card card-body bg-light mb-3">
               <h3 className="text-center text-info">Биография</h3>
               <Timeline lineColor={"#ddd"}>
-                {person.bio.map((item, i) => {
+                {bio.map((item, i) => {
                   return (
                     <TimelineItem
                       key={i}
@@ -63,7 +63,7 @@ class PersonItem extends Component {
               <h3 className="text-center text-info">Список произведений</h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
-                  {person.works.map((work, index) => (
+                  {works.map((work, index) => (
                     <div
                       key={index}
                       className="col-12 col-md-12 m-auto text-center"
@@ -78,7 +78,7 @@ class PersonItem extends Component {
               <h3 className="text-center text-info">Галерея</h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
-                  {person.photos.map((photo, index) => (
+                  {photos.map((photo, index) => (
                     <div
                       key={index}
                       className="col-4 col-md-4 m-auto text-center"
@@ -93,7 +93,7 @@ class PersonItem extends Component {
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   <YouTube
-                    videoId={person.video}
+                    videoId={video}
                     opts={opts}
                     onReady={this._onReady}
                   />
