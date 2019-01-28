@@ -5,6 +5,7 @@ import { Button } from 'reactstrap';
 import './main-page.css';
 
 const MainPage = ({ person: { name, titlePhoto, birthDate, birthPlace, id }, goToPersonPage, t }) => (
+
   <div>
     <div className="main-page__div-background">
       <div className="main-page__div-wrapper">
@@ -79,7 +80,7 @@ const MainPage = ({ person: { name, titlePhoto, birthDate, birthPlace, id }, goT
         </div>
       </div>
     </div>
- </div>
+  </div>
 );
 
 export default MainPage;
