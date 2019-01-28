@@ -13,7 +13,7 @@ class PersonItem extends Component {
   }
   render() {
     const {
-      person: { name, titlePhoto, bio, works, photos, video },
+      person: { name, titlePhoto, bio, works, photos, video, lat, lng },
       t
     } = this.props;
     const opts = {
@@ -106,7 +106,7 @@ class PersonItem extends Component {
               </div>
               <hr />
               <div id="mapid">
-                <MyFancyComponent />
+                <MyFancyComponent lat={lat} lng={lng} />
               </div>
             </div>
           </div>

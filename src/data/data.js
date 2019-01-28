@@ -40,7 +40,9 @@ const artistList = [
       "bazan_5.jpg"
     ],
     video: "2S5ggpopE5Y",
-    workLocation: "Франция"
+    workLocation: "Франция",
+    lat: "48.864716",
+    lng: "2.349014"
   },
   {
     id: "barsukov",
@@ -86,7 +88,9 @@ const artistList = [
       "barsukov_5.jpg"
     ],
     video: "",
-    workLocation: "Витебск"
+    workLocation: "Витебск",
+    lat: "48.864716",
+    lng: "2.349014"
   },
   {
     id: "branshteter",
@@ -128,7 +132,9 @@ const artistList = [
       "branshteter_5.jpg"
     ],
     video: "3QP-ZW5_DfM",
-    workLocation: "Витебск"
+    workLocation: "Витебск",
+    lat: "48.864716",
+    lng: "2.349014"
   },
   {
     id: "shmerling",
@@ -172,7 +178,9 @@ const artistList = [
       "shmerling_5.jpg"
     ],
     video: "Rh5e-qcdmdQ",
-    workLocation: "Витебск"
+    workLocation: "Витебск",
+    lat: "48.864716",
+    lng: "2.349014"
   },
   {
     id: "dashkevich",
@@ -235,7 +243,9 @@ const artistList = [
     ],
     video:
       "https://storage.kaztube.kz:8080/storage/video/28/fc/03/40/2f/28fc03402ffcdccfc8f141bbf8e78a27.mp4",
-    workLocation: "Минск"
+    workLocation: "Минск",
+    lat: "48.864716",
+    lng: "2.349014"
   }
 ];
 
