@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
+import YouTube from "react-youtube";
 
 class PersonItem extends Component {
   componentDidMount() {}
@@ -10,6 +11,13 @@ class PersonItem extends Component {
   }
   render() {
     const { person } = this.props;
+    const opts = {
+      height: "390",
+      width: "640",
+      playerVars: {
+        autoplay: 1
+      }
+    };
     let personContent;
     personContent = (
       <div>
@@ -63,6 +71,31 @@ class PersonItem extends Component {
                   ))}
                 </div>
               </div>
+              <hr />
+              <h3 class="text-center text-info">Галерея</h3>
+              <div class="d-flex flex-wrap justify-content-center align-items-center">
+                <div className="row">
+                  {person.photos.map((photo, index) => (
+                    <div
+                      key={index}
+                      className="col-4 col-md-4 m-auto text-center"
+                    >
+                      <img className="" src={`../assets/${photo}`} alt="" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <hr />
+              <h3 class="text-center text-info">Видео</h3>
+              <div class="d-flex flex-wrap justify-content-center align-items-center">
+                <div className="row">
+                  <YouTube
+                    videoId={person.video}
+                    opts={opts}
+                    onReady={this._onReady}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -77,6 +110,9 @@ class PersonItem extends Component {
         </div>
       </div>
     );
+  }
+  _onReady(event) {
+    event.target.pauseVideo();
   }
 }
 
