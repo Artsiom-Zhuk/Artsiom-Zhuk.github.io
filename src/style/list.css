@@ -4,7 +4,7 @@
   width: 100%;
   min-height: calc(100vh - 48px);
   padding-top: 10px;
-  background-image: url(/static/media/main-page-background.5d1a2dd4.jpg);
+  background-image: url(../assets/main-page-background.jpg);
   background-size: cover;
   margin-bottom: 0;
 }
