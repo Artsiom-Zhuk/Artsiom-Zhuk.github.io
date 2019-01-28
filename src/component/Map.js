@@ -10,23 +10,29 @@ import {
 const MyMapComponent = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyCll9zAc9un31wk8IYNfgfDGEwjDJrFZ9g&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withScriptjs,
   withGoogleMap
-)(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    {props.isMarkerShown && (
-      <Marker
-        position={{ lat: -34.397, lng: 150.644 }}
-        onClick={props.onMarkerClick}
-      />
-    )}
-  </GoogleMap>
-));
+)(props => {
+  console.log(props);
+  return (
+    <GoogleMap
+      defaultZoom={8}
+      defaultCenter={{ lat: Number(props.lat), lng: Number(props.lng) }}
+    >
+      {props.isMarkerShown && (
+        <Marker
+          position={{ lat: Number(props.lat), lng: Number(props.lng) }}
+          onClick={props.onMarkerClick}
+        />
+      )}
+    </GoogleMap>
+  );
+});
 
 class MyFancyComponent extends React.PureComponent {
   state = {
@@ -53,6 +59,8 @@ class MyFancyComponent extends React.PureComponent {
       <MyMapComponent
         isMarkerShown={this.state.isMarkerShown}
         onMarkerClick={this.handleMarkerClick}
+        lat={this.props.lat}
+        lng={this.props.lng}
       />
     );
   }
