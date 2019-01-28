@@ -12,7 +12,10 @@ class PersonItem extends Component {
     }
   }
   render() {
-    const { person: { name, titlePhoto, bio, works, photos, video }, t } = this.props;
+    const {
+      person: { name, titlePhoto, bio, works, photos, video },
+      t
+    } = this.props;
     const opts = {
       height: "390",
       width: "640",
@@ -41,7 +44,7 @@ class PersonItem extends Component {
               </div>
             </div>
             <div className="card card-body bg-light mb-3">
-              <h3 className="text-center text-info">{t('Биография')}</h3>
+              <h3 className="text-center text-info">{t("Биография")}</h3>
               <Timeline lineColor={"#ddd"}>
                 {bio.map(({ period, activity }, i) => {
                   return (
@@ -56,7 +59,9 @@ class PersonItem extends Component {
                 })}
               </Timeline>
               <hr />
-              <h3 className="text-center text-info">{t('Список основных работ')}</h3>
+              <h3 className="text-center text-info">
+                {t("Список основных работ")}
+              </h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   {works.map((work, index) => (
@@ -71,7 +76,7 @@ class PersonItem extends Component {
                 </div>
               </div>
               <hr />
-              <h3 className="text-center text-info">{t('Галерея')}</h3>
+              <h3 className="text-center text-info">{t("Галерея")}</h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   {photos.map((photo, index) => (
@@ -89,7 +94,7 @@ class PersonItem extends Component {
                 </div>
               </div>
               <hr />
-              <h3 className="text-center text-info">{t('Видео')}</h3>
+              <h3 className="text-center text-info">{t("Видео")}</h3>
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 <div className="row">
                   <YouTube
