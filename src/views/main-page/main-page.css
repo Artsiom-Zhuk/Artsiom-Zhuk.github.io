@@ -1,6 +1,6 @@
 .main-page__div-background {
   background-image: url("../../assets/main-page-background.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center center;
   min-height: calc(100vh - 48px);
   display: flex;
@@ -20,13 +20,13 @@
   padding-bottom: 50px;
 }
 
-.main-page__div-container-title-artist-day  {
+.main-page__div-container-title-artist-day {
   width: 90%;
   height: 100px;
   margin-top: 20px;
 }
 
-.main-page__badge-title-artist-day{
+.main-page__badge-title-artist-day {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -40,86 +40,163 @@
   margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start ;
+  justify-content: flex-start;
 }
 
 .main-page__div-container-image-artist {
   margin-right: 100px;
-  }
+}
 
-.main-page__media-image-artist{
+.main-page__media-image-artist {
   width: 300px;
   border-radius: 20px;
 }
 
 .main-page__div-about-artist {
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
 
-.main-page__button-more{
+.main-page__div-container-button-more {
   margin-top: 20px;
 }
 
-.main-page__div-container-about-portal{
+.main-page__div-container-about-portal {
   width: 90%;
   margin-top: 120px;
 }
 
-.main-page__div-container-team-project{
+.main-page__div-container-team-project {
   width: 90%;
   margin-top: 120px;
 }
 
-.main-page__h5-team-ptoject{
+.main-page__h5-title-team-ptoject {
   text-align: center;
 }
 
-.main-page__div-team-project{
+.main-page__div-team-project {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.main-page__div-developer{
+.main-page__div-developer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main-page__div-img-first-developer{
-  background-image: url("../../assets/developer-anatolii.jpg");
+.main-page__div-img-developer {
   width: 100px;
   height: 100px;
   background-size: 100% 100%;
   border-radius: 100%;
 }
 
-.main-page__div-img-second-developer{
-  background-image: url("../../assets/developer-anatolii.jpg");
-  width: 100px;
-  height: 100px;
-  background-size: 100% 100%;
-  border-radius: 100%;
+.main-page__div-img-first-developer {
+  background-image: url("../../assets/developer-vladislav.jpg");
 }
 
-.main-page__div-img-third-developer{
+.main-page__div-img-second-developer {
   background-image: url("../../assets/developer-anatolii.jpg");
-  width: 100px;
-  height: 100px;
-  background-size: 100% 100%;
-  border-radius: 100%;
 }
 
-.main-page__div-img-fourth-developer{
-  background-image: url("../../assets/developer-anatolii.jpg");
-  width: 100px;
-  height: 100px;
-  background-size: 100% 100%;
-  border-radius: 100%;
+.main-page__div-img-third-developer {
+  background-image: url("../../assets/developer-pavel.jpg");
 }
 
-.main-page__div-name-developer{
+.main-page__div-img-fourth-developer {
+  background-image: url("../../assets/developer-artem.jpg");
+}
+
+.main-page__div-name-developer {
   margin-top: 20px;
-  color:green;
+  color: green;
+}
+
+@media screen and (max-width: 900px) {
+  .main-page__div-wrapper {
+    width: 90%;
+  }
+
+  .main-page__div-container-image-artist {
+    margin-right: 15px;
+  }
+
+  .main-page__media-image-artist {
+    width: 100px;
+  }
+
+  .main-page__div-team-project {
+    flex-direction: column;
+  }
+
+  .main-page__div-developer {
+    margin-bottom: 40px;
+  }
+
+  .main-page__div-last-developer {
+    margin-bottom: 0px;
+  }
+
+  .main-page__div-img-developer {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .main-page__badge-title-artist-day {
+    font-size: 25px;
+  }
+
+  .main-page__media-container-artist-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-page__div-container-image-artist {
+    margin-right: 0px;
+  }
+
+  .main-page__badge-title-artist-day {
+    justify-content: center;
+  }
+
+  .main-page__div-about-artist {
+    margin-top: 50px;
+  }
+
+  .main-page__div-container-button-more {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-page__media-image-artist {
+    width: 150px;
+  }
+
+  .main-page__div-container-about-portal {
+    width: 90%;
+    margin-top: 100px;
+  }
+
+  .main-page__h4-title-about-portal {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-page__div-information-about-portal {
+    text-align: justify;
+  }
+
+  .main-page__div-about-artist {
+    margin-top: 20px;
+  }
+
+  .main-page__div-container-name-artist {
+    text-align: center;
+  }
 }
