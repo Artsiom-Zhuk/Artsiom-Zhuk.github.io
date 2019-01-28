@@ -3,8 +3,12 @@ import "../style/navigation.css";
 
 const Navigation = ({ goToMain, goToPersonList, t }) => (
   <nav>
-    <li onClick={goToMain}>{t("Main")}</li>
-    <li onClick={goToPersonList}>{t("Person List")}</li>
+    <li className="nav-button" onClick={goToMain}>
+      {t("Main")}
+    </li>
+    <li className="nav-button" onClick={goToPersonList}>
+      {t("Person List")}
+    </li>
   </nav>
 );
 
