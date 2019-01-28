@@ -34,6 +34,7 @@ class PersonItem extends Component {
               </div>
             </div>
             <div className="card card-body bg-light mb-3">
+              <h3 className="text-center text-info">Биография</h3>
               <Timeline lineColor={"#ddd"}>
                 {person.bio.map((item, i) => {
                   return (
@@ -47,6 +48,21 @@ class PersonItem extends Component {
                   );
                 })}
               </Timeline>
+              <hr />
+              <h3 class="text-center text-info">Список произведений</h3>
+              <div class="d-flex flex-wrap justify-content-center align-items-center">
+                <div className="row">
+                  {person.works.map((work, index) => (
+                    <div
+                      key={index}
+                      className="col-12 col-md-12 m-auto text-center"
+                    >
+                      <i className="fa fa-check pr-1" />
+                      {work}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
