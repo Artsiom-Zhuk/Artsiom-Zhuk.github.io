@@ -31,7 +31,7 @@ class PersonItem extends Component {
                 <div className="col-4 col-md-3 m-auto">
                   <img
                     className="rounded-circle"
-                    src={`../assets/${titlePhoto}`}
+                    src={require(`../assets/${titlePhoto}`)}
                     alt=""
                   />
                 </div>
@@ -79,7 +79,11 @@ class PersonItem extends Component {
                       key={index}
                       className="col-4 col-md-4 m-auto text-center"
                     >
-                      <img className="" src={`../assets/${photo}`} alt="" />
+                      <img
+                        className=""
+                        src={require(`../assets/${photo}`)}
+                        alt=""
+                      />
                     </div>
                   ))}
                 </div>

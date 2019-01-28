@@ -127,7 +127,7 @@ const artistList = [
       "branshteter_4.jpg",
       "branshteter_5.jpg"
     ],
-    video: "https://www.youtube.com/watch?v=3QP-ZW5_DfM",
+    video: "3QP-ZW5_DfM",
     workLocation: "Витебск"
   },
   {
