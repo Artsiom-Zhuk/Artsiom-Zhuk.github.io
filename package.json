@@ -2,7 +2,7 @@
   "name": "culture-portal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://myusername.github.io",
+  "homepage": "https://github.com/Artsiom-Zhuk/CodeJam-Culture-Portal",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "gh-pages": "^2.0.1",
